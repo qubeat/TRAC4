@@ -1,0 +1,3 @@
+#(ds,Factorial,(#(eq,1,X,1,(#(ml,X,#(cl,Factorial,#(ad,X,-1)))))))
+#(ss,Factorial,X)
+

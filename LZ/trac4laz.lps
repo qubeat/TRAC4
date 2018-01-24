@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="trac4laz.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="11"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="UTRAC4LZ.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="1682"/>
+        <CursorPos X="13" Y="1687"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="UTRAC4LZ.pas"/>
+      </Position1>
+      <Position2>
+        <Filename Value="UTRAC4LZ.pas"/>
+        <Caret Line="10" Column="7"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

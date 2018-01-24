@@ -1,0 +1,281 @@
+Functions of TRAC4 2k13
+
+
+Standard functions of T64
+
+
+#(rs)   
+
+   {* rs, read string *}
+
+#(ps,any text) 
+
+   {* ps, print string *}
+
+#(ds,name,text) 
+
+   {* ds, define string *}
+
+#(ss,name,arg1,arg2,...) 
+
+   {* ss, segment string *}
+
+
+#(cl,name,arg1,arg2,...) 
+
+
+   {* cl, call string *}
+
+#(cr,name,default) 
+
+   {* cr, call restore *}
+
+#(cm,X)
+ 
+   {* cm, change meta  *}
+
+#(cs,name,default) 
+
+   {* cs, call segment *}
+
+#(cc,name,default) 
+
+   {* cc, call character *}
+
+#(cn,name,n,default)
+
+   {* cn, call n characters *}
+
+Integer arithmetics with arbitrary size numbers
+
+#(ad,n1,n2) 
+
+   {* ad, add (no overflow - no default) *}
+
+#(su,n1,n2)
+
+   {* su, subtract (no overflow - no default) *}
+
+#(ml,n1,n2)
+
+   {* ml, multiply (no overflow - no default) *}
+
+#(dv,n1,n2,default) 
+
+   {* dv, divide (integer div, return default if n2=0 ) *}
+
+
+#(eq,string1,string2,then,else) 
+
+   {* eq, equal *}
+
+#(gr,n1,n2,then,else)
+
+   {* greater, implemented 2k5 *}
+  
+
+#(dd,name1,name2,...) 
+
+   {* dd, delete definition *}
+
+#(ln) 
+
+   {* ln, list name *}
+
+#(pf,name) 
+
+  {* pf, print form -- implemented 2k5 *} 
+
+#(st)
+
+   {* st, stop *}
+   {* instead of ex *}
+
+#(tn)
+
+   {* tn, trace on *}
+
+#(tf)
+
+   {* tf, trace off *}
+
+Extensions
+
+  Macros may be called as build-in function:
+
+#(name,arg1,arg2,...)   
+
+  can be used instead of
+
+#(cl,name,arg1,arg2,...)   
+
+
+Additional build-in functions
+
+Extension, Simplest Functions
+
+#(no)
+
+   {* no, empty operation *}
+
+#(ge,n1,n2,then,else) 
+
+   {* ge, greater or equal than *}
+
+Extensions, Standard 
+
+#(ch,number)
+
+   {* ch, number to character *}
+
+#(ac,string)
+
+   {* ac, ascii code *}
+
+#(in,name,string,default) 
+
+   {* in, initial *}
+
+#(oi,name)
+
+   {* - oi, open input *}
+
+#(oo,name)
+
+#(oo,name,mode)
+
+   {* oo, open output *}
+   {* mode 0 : rewrite (default), 1 : append  *}
+
+Extensions, File operations
+
+#(rf,default)
+
+   {* rf, read line from file *}
+
+#(wf,string)
+
+   {* wf, write to file *}
+
+Extensions, Lists/templates support
+
+
+#(hl,arg1,arg2,...)
+
+   {* hl, head of list -> arg1 *}
+
+#(tl,arg1,arg2,...)
+
+   {* tl, tail of list *}
+
+##(tl,arg1,arg2,arg3,...)
+
+   {* -> (arg2),(arg3),... *}
+
+#(ll,arg1,arg2,...)
+
+   {* ll, list length, number of elements *}
+
+#(en,n,arg1,arg2,...)
+
+   {* en, n'th element of list *}
+
+#(bl,n,arg1,arg2,...)
+
+   {* bl, begining of list (elements 1,...,n) *}
+
+#(el,n,arg1,arg2,...)
+
+   {* el, end of list (elements n+1,... ) *}
+
+#(te,name,string,default)
+
+   {* te, create list from template *}
+
+-------- Example ---------------------
+
+#(ds,expr,x:=a+b)
+#(ss,expr,x,a,b)
+##(te,expr,y:=2+3)
+
+ -> (y),(2),(3)
+
+##(te,expr,y:=2-3,error)
+
+ -> error
+-------------------------------------
+
+#(cp,name,string,then,else) 
+
+   {* cp, compare after pointer *}
+
+
+Other extensions
+
+#(lf,name,default)
+
+   {* load file *}
+
+#(+,x,y,default)
+#(-,x,y,default)
+#(*,x,y,default)
+#(/,x,y,default)
+
+  {* arithmetic with real numbers *}
+
+#(<,x,y,yes,no,default)
+#(=,x,y,yes,no,default)
+#(>,x,y,yes,no,default)
+
+  {* comparison of real numbers *}
+
+  {* default is also used if x,y aren't proper strings *}
+
+
+Obsolete
+
+#(rc)
+
+   {* read character *} 
+   {* may be some problems because of Pascal Read(ch) implementations *}
+
+
+Absent functions
+
+#(da)
+
+   {* delete all } 
+   {* absent in sake of safety *}
+
+
+   {* next 3 functions are not implemented due to using 
+      nonfixed length integer decimal arithmetics }
+
+#(bu,n1,n2) 
+
+  {* bitwise OR (union) *}
+
+#(bi,n1,n2) 
+
+  {* bitwise AND (intersection) *}
+
+#(bc,n1)
+
+  {* bitwise NOT (complement) *}
+
+
+  {* file operations with block are not implemented, 
+     oi,oo,rf,wf,lf are used instead *}
+
+#(sb,pathname,name1,name2,...)
+
+ {* save block *} 
+
+#(fb,pathname)
+
+ {* read (fetch) block *} 
+
+#(eb,filename) 
+
+ {* erase block *} 
+
