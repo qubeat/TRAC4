@@ -89,7 +89,7 @@ Integer arithmetics with arbitrary size numbers
 #(st)
 
    {* st, stop *}
-   {* instead of ex *}
+   {* instead of hl *}
 
 #(tn)
 
