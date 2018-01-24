@@ -5,7 +5,7 @@ interface
 type
  TFloat = Double;
 
- function StrBinOP(op : char; var A,B,Res : String) : Boolean;
+ function StrBinOP(op : Char; var A,B,Res : String) : Boolean;
  function StrCmp3(var A,B : String; var EQ3 : Integer) : Boolean;
 
 
@@ -14,7 +14,7 @@ implementation
 {uses
  SysUtils;}
 
-function StrBinOp(op : char; var A,B,Res : String) : Boolean;
+function StrBinOp(op : Char; var A,B,Res : String) : Boolean;
 var
  fA,fB,fRes : TFloat;
 begin
@@ -28,7 +28,7 @@ begin
    '-' : fRes := fA-fB;
    '/' : fRes := fA/fB;
   end;
-  Res := Format('%g',[fRes])
+  Res := FloatToStr(fRes)
  except
   StrBinOp := false;
  end;
