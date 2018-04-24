@@ -1,0 +1,4 @@
+( while macro: #(while,(cond),(expression)); while cond=1 do expression 
+)
+#(ds,while,(#(eq,cond,1,(expr)(#(while,(cond),(expr))))))
+#(ss,while,cond,expr)

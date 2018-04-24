@@ -1,0 +1,5 @@
+#(eq,##(rep),,(#(lf,rep.trac)))
+( for macro: #(for,i,n,(expression)); #(i) is 0..n-1 in expression
+)
+#(ds,for,(#(ds,i,0)#(rep,n,(expr#(ds,i,#(ad,#(i),1))))))
+#(ss,for,i,n,expr)
