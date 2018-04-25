@@ -1,4 +1,4 @@
 ( rep macro: #(rep,n,string) or #(rep,n,(expression)); repeat n times
 )
-#(ds,rep,(#(eq,n,0,,(expr)(#(rep,#(ad,n,-1),(expr))))))
+#(ds,rep,(#(gr,n,0,(expr)(#(rep,#(ad,n,-1),(expr))))))
 ##(ss,rep,n,expr)
