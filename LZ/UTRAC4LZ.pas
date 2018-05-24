@@ -884,7 +884,7 @@ uses
      I2:=APar(2)+1; e2:=APar(3)-1;
      I1:=f.AdPtr-1;
      e1:=Length(f.ForMem)-1; J1:=I1; J2:=I2;
-     while (mch(f.ForMem[J1])<0) and (J1<=e1)
+     while (J1<=e1) and (mch(f.ForMem[J1])<0)  {!!}
      do J1:=J1+1;
      if J1>e1 then begin k:=-1; J2:=e2 end else
       begin k:=mch(f.ForMem[J1]); J2:=I2+J1-I1-1 end;
@@ -892,7 +892,7 @@ uses
        begin I1:=J1; I2:=J2+1 end else k:=0;
      if k>0 then
       repeat J1:=J1+1; if J1>e1 then J2:=e2 else
-       begin while (mch(f.ForMem[J1])<0) and (J1<=e1)
+       begin while (J1<=e1) and (mch(f.ForMem[J1])<0) {!!}
         do J1:=J1+1;
         Search(f.ForMem,ChMem,I1+1,J1-1,I2,e2,J2) end;
        if J2>e2 then k:=0 else

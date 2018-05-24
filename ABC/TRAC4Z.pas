@@ -31,7 +31,7 @@ begin
  with TT do
  begin
   IniTRAC(defLenChain,defLenCF);
-  InsFunTRAC('hello',HelloWorld,True);
+  InsFunTRAC('hello',HelloWorld);
   PREND:=false;
   repeat
     EvalTRAC('#(ps,#(rs))')

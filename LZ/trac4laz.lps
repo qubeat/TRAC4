@@ -2,29 +2,30 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <BuildModes Active="Default"/>
     <Units Count="2">
       <Unit0>
         <Filename Value="trac4laz.dpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="11"/>
-        <UsageCount Value="20"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="3"/>
+        <CursorPos X="38" Y="39"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
       <Unit1>
         <Filename Value="UTRAC4LZ.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="1682"/>
-        <CursorPos X="13" Y="1687"/>
+        <TopLine Value="876"/>
+        <CursorPos X="55" Y="895"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="5" HistoryIndex="4">
       <Position1>
         <Filename Value="UTRAC4LZ.pas"/>
       </Position1>
@@ -32,6 +33,18 @@
         <Filename Value="UTRAC4LZ.pas"/>
         <Caret Line="10" Column="7"/>
       </Position2>
+      <Position3>
+        <Filename Value="UTRAC4LZ.pas"/>
+        <Caret Line="1687" Column="13" TopLine="1682"/>
+      </Position3>
+      <Position4>
+        <Filename Value="trac4laz.dpr"/>
+        <Caret Line="55" TopLine="17"/>
+      </Position4>
+      <Position5>
+        <Filename Value="UTRAC4LZ.pas"/>
+        <Caret Line="895" Column="55" TopLine="876"/>
+      </Position5>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

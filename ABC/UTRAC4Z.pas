@@ -164,8 +164,8 @@ public
    procedure IniTRAC(aLenChain,aLenCF : Longint);
 
    procedure FinTRAC;
-   procedure RunTRAC(aLenChain : Longint { = defLenChain};
-                     aLenCF : Longint {= defLenCF});
+   procedure RunTRAC(aLenChain : Longint  := defLenChain;
+                     aLenCF : Longint := defLenCF);
    procedure AlgTRAC;
    procedure EvalTRAC(Instr : TRString);
 
@@ -175,14 +175,14 @@ public
    procedure RetStFun(var St : Alpha);
 
    procedure InsFunTRAC(FunName : TRString;
-     Fun : ProcTRAC; Update : Boolean {= True});
+     Fun : ProcTRAC; Update : Boolean := True);
 
    procedure WrDebug(Msg : TRString); virtual;
-   procedure WrTrace(Msg : TRString; IsEol : Boolean {= False};
-    info : integer {= 1}); virtual;
+   procedure WrTrace(Msg : TRString; IsEol : Boolean := False;
+    info : integer := 1); virtual;
 
    procedure WriteTRAC(Str : TRString;
-    IsEol : Boolean {= False}); virtual;
+    IsEol : Boolean := False); virtual;
 
    procedure ReadlnTRAC; virtual;
    procedure ReadTRAC(var Ch : TRChar); virtual;
@@ -714,12 +714,12 @@ uses
   begin
   with TT do
   begin EXI:=false; BB:=nil; BE:=nil;
-   WriteTRAC(chl(MetaChar),False);
+   WriteTRAC(chl(MetaChar));
    ReadTRAC(ch); if ch<>chl(MetaChar) then {* !!!! *}
    begin WrChL(lch(ch),BB); BE:=BB; ReadTRAC(ch);
     while ch<>chl(MetaChar) do
     begin WrChL(lch(ch),BE);
-     if eoln then begin ch:=EOL; ReadlnTRAC; WriteTRAC('/',False) end
+     if eoln then begin ch:=EOL; ReadlnTRAC; WriteTRAC('/') end
              else ReadTRAC(ch)
     end;
     ReadlnTRAC;
@@ -748,7 +748,7 @@ uses
   begin
    for I:=stc[pfbg+1].adm+1 to stc[pfbg+2].adm-1 do
    begin ch:=ChMem[I]; if iord(ch)=10
-     then WriteTRAC('',True) else WriteTRAC(chl(ch),False) end;
+     then WriteTRAC('',True) else WriteTRAC(chl(ch)) end;
    DAFS; WriteTRAC('',True)
   end;
   end;
@@ -883,7 +883,7 @@ uses
      I2:=APar(2)+1; e2:=APar(3)-1;
      I1:=f.AdPtr-1;
      e1:=Length(f.ForMem)-1; J1:=I1; J2:=I2;
-     while (mch(f.ForMem[J1])<0) and (J1<=e1)
+     while (J1<=e1) and (mch(f.ForMem[J1])<0)
      do J1:=J1+1;
      if J1>e1 then begin k:=-1; J2:=e2 end else
       begin k:=mch(f.ForMem[J1]); J2:=I2+J1-I1-1 end;
@@ -891,7 +891,7 @@ uses
        begin I1:=J1; I2:=J2+1 end else k:=0;
      if k>0 then
       repeat J1:=J1+1; if J1>e1 then J2:=e2 else
-       begin while (mch(f.ForMem[J1])<0) and (J1<=e1)
+       begin while (J1<=e1) and (mch(f.ForMem[J1])<0)
         do J1:=J1+1;
         Search(f.ForMem,ChMem,I1+1,J1-1,I2,e2,J2) end;
        if J2>e2 then k:=0 else
@@ -1797,11 +1797,11 @@ uses
     N1:=stc[pfbg].adm+1; N2:=stc[pfbg+1].adm-N1;
     SubstShort(imfu,N1,N2);
     if trace then
-    begin if stc[pfbg].tym=BgNeuFun then WrTrace('#',False,1); WrTrace('#(',False,1);
+    begin if stc[pfbg].tym=BgNeuFun then WrTrace('#'); WrTrace('#(');
      for N1:=pfbg to pstc-2 do begin
-      if N1<>pfbg then WrTrace(chl(MetaChar),False,1);
+      if N1<>pfbg then WrTrace(chl(MetaChar));
       for I:=stc[N1].adm+1 to stc[N1+1].adm-1 do
-      WrTrace(chl(ChMem[I]),False,1) end; WrTrace(')',true,1) end;
+      WrTrace(chl(ChMem[I])) end; WrTrace(')',true) end;
      Idx := ListFun.IndexOfKey(TRtoString(imfu));
      if Idx >= 0 then
      begin
@@ -1811,12 +1811,12 @@ uses
      end
      else t_cl(Self,0);
     if trace then begin
-     if nas=MainChain.oac then begin WrTrace('<-'+chl(MetaChar),False,1);
+     if nas=MainChain.oac then begin WrTrace('<-'+chl(MetaChar));
       if stc[pfbg].tym=BgNeuFun then N1:=stc[pfbg].adm-2
                                 else N1:=stc[pfbg].adm-1;
-      N2:=MainChain.enc end  else begin WrTrace('->'+chl(MetaChar),False,1);
+      N2:=MainChain.enc end  else begin WrTrace('->'+chl(MetaChar));
       N1:=MainChain.oac; N2:=nas-1 end;
-     for I:=N1 to N2 do WrTrace(chl(ChMem[I]),False,1); WrTrace('',true,1) end
+     for I:=N1 to N2 do WrTrace(chl(ChMem[I])); WrTrace('',true) end
    end
   end;
   {***************************************}
