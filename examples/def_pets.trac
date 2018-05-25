@@ -8,7 +8,7 @@
 #(ds,cat_says,x says "meow")
 #(ss,cat_says,x)
 #(ds,dog_says,x says "woof")
-#(ss,dog_says,x,else)
+#(ss,dog_says,x)
 #(ds,pets,(Pets[x,y]))
 #(ss,pets,x,y)
 #(ds,pets_say,X and Y say "wow")
