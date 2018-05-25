@@ -1,0 +1,19 @@
+( Testing of templates
+)
+#(lf,def_pets.trac)
+(
+ Test cat
+)
+#(says,Cat[Alice])
+(
+ Test dog
+)
+#(says,Dog[Bob])
+(
+ Test both
+)
+#(says,(Pets[Alice,Bob]))
+(
+ Test unknown
+)
+#(says,Cow)

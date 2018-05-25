@@ -1,0 +1,7 @@
+( match macro: #(match,template,string,result,else)
+  template and result are functions defined via ds/ss
+)
+#(ds,chk_arg,(#(eq,(arg),(),else,#(fun,arg))))
+#(ss,chk_arg,fun,arg,else)
+#(ds,match,(#(chk_arg,func,##(te,name,(expr)),else)))
+#(ss,match,name,expr,func,else)
