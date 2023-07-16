@@ -1697,7 +1697,6 @@ uses
      (n : 'cl'; p : t_cl1),
      (n : 'cr'; p : t_cr),
      (n : 'cm'; p : t_cm),
-     {(n : 'rs'; p : t_rs),}
      (n : 'ad'; p : t_ad),
      (n : 'su'; p : t_su),
      (n : 'ml'; p : t_ml),
@@ -1892,7 +1891,7 @@ uses
                             aLenCF : longint = defLenCF);
    begin
      IniTRAC(aLenChain,aLenCF);
-     WrTrace('Processor TRAC 4LZ (MACAR 2K5/13/17)',True,0);
+     WrTrace('Processor TRAC 4LZ (MACAR 2K5/13/18)',True,0);
      AlgTRAC;
      WrTrace('Stop the processor.',True,0);
      FinTRAC;
