@@ -7,5 +7,5 @@ LZ - Lazarus/Delphi source
 
 ABC - PascalABC.NET source
 
-SourceForge page for TRAC4 is https://sourceforge.net/projects/trac4/
+SourceForge project page for TRAC4 is https://sourceforge.net/projects/trac4/
 
