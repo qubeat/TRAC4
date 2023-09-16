@@ -9,7 +9,7 @@ Directories:
 
  LZ - Lazarus/Delphi source
 
- doc - documentation
+ doc - list of functions
 
  examples - examples of TRAC programs
 
